@@ -1,0 +1,51 @@
+giuggy@ubuntu:~/Documents/Originale$ echo -n "lea89" | md5sum >> password_list.txt
+giuggy@ubuntu:~/Documents/Originale$ ./md5crack_verbose password_list.txt
+numh dovrebbe essere 5 
+iterations dovrebbe essere 36 
+stringLength 1 
+[info] analyzing passwords of length 1...
+numh dovrebbe essere 5 
+iterations dovrebbe essere 1296 
+stringLength 2 
+[info] analyzing passwords of length 2...
+numh dovrebbe essere 5 
+iterations dovrebbe essere 46656 
+stringLength 3 
+[info] analyzing passwords of length 3...
+numh dovrebbe essere 5 
+iterations dovrebbe essere 1679616 
+
+giuggy@ubuntu:~/Documents/Originale$ echo -n "lea89" | md5sum >> password_list.txt
+giuggy@ubuntu:~/Documents/Originale$ ./md5crack_verbose password_list.txt
+numh dovrebbe essere 6 
+iterations dovrebbe essere 36 
+stringLength 1 
+[info] analyzing passwords of length 1...
+numh dovrebbe essere 6 
+iterations dovrebbe essere 1296 
+stringLength 2 
+[info] analyzing passwords of length 2...
+numh dovrebbe essere 6 
+iterations dovrebbe essere 46656 
+stringLength 3 
+[info] analyzing passwords of length 3...
+numh dovrebbe essere 6 
+iterations dovrebbe essere 1679616 
+
+
+giuggy@ubuntu:~/Documents/Originale$ echo -n "lea89" | md5sum >> password_list.txt
+giuggy@ubuntu:~/Documents/Originale$ ./md5crack_verbose password_list.txt
+numh dovrebbe essere 7 
+iterations dovrebbe essere 36 
+stringLength 1 
+[info] analyzing passwords of length 1...
+numh dovrebbe essere 7 
+iterations dovrebbe essere 1296 
+stringLength 2 
+[info] analyzing passwords of length 2...
+numh dovrebbe essere 7 
+iterations dovrebbe essere 46656 
+stringLength 3 
+[info] analyzing passwords of length 3...
+numh dovrebbe essere 7 
+iterations dovrebbe essere 1679616 

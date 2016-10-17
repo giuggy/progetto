@@ -1,0 +1,4 @@
+Il main.c chiama il metodo analyzeLength, scritto in enum.c, dove vengono inizializzati i thread che avranno il compito di richimare la funzione find, contenuta in sort.c.
+In analyzeLength saranno inizializzati i semafori per regolare le funzioni find e rimozione (nell'originale sarebbe find&remove). 
+Il metodo remove sarà eseguito solo da quei thread che avranno trovato una password. Inoltre potranno modificare la variabile globale numH, dichiarata in sort.h, che rappresenta il numero di password mancanti. Le altre variabili globali sono i semafori e readCount, per regolare l'accesso. 
+In fondo ad enum.c e sort.c ci sono i metodi iterativi originali.

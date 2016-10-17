@@ -1,0 +1,37 @@
+gcc -O3 -Wall -c enum.c -o enum.o
+gcc -O3 -Wall -c sort.c -o sort.o
+gcc -O3 -Wall main.o md5.o enum.o sort.o -o md5crack -lpthread -lrt
+enum.o: In function `work':
+enum.c:(.text+0x6c): undefined reference to `numH'
+enum.c:(.text+0x13f): undefined reference to `numH'
+enum.c:(.text+0x155): undefined reference to `numH'
+enum.c:(.text+0x173): undefined reference to `numH'
+enum.c:(.text+0x1af): undefined reference to `numH'
+enum.o: In function `iniziaSem':
+enum.c:(.text+0x247): undefined reference to `x'
+enum.c:(.text+0x25e): undefined reference to `wsem'
+enum.o: In function `liberaSem':
+enum.c:(.text+0x2d7): undefined reference to `x'
+enum.c:(.text+0x2e7): undefined reference to `wsem'
+enum.o: In function `analyzeLength':
+enum.c:(.text+0x398): undefined reference to `numH'
+enum.c:(.text+0x472): undefined reference to `numH'
+sort.o: In function `rimozione':
+sort.c:(.text+0x28): undefined reference to `wsem'
+sort.c:(.text+0xb9): undefined reference to `wsem'
+sort.o: In function `find':
+sort.c:(.text+0x137): undefined reference to `x'
+sort.c:(.text+0x14f): undefined reference to `readcount'
+sort.c:(.text+0x15b): undefined reference to `readcount'
+sort.c:(.text+0x168): undefined reference to `x'
+sort.c:(.text+0x1d3): undefined reference to `x'
+sort.c:(.text+0x1e2): undefined reference to `readcount'
+sort.c:(.text+0x1ec): undefined reference to `wsem'
+sort.c:(.text+0x1fc): undefined reference to `x'
+sort.c:(.text+0x223): undefined reference to `wsem'
+collect2: error: ld returned 1 exit status
+make: *** [md5crack] Error 1
+
+
+
+

@@ -6,12 +6,7 @@ __kernel void encode (__global uint8_t* buffer, __global const uint8_t* alphabet
 	if(i>= stringLength) return;
 	
 
-	int a=0; 
-	int carry=0;
-	counter= (counter+i)/ charsetLength
-	a = carry + (counter % charsetLength);
-	carry = a / charsetLength;
-	a -= carry * charsetLength;
+	int a=0; ;
 	buffer[i] = alphabet[a];
 
 

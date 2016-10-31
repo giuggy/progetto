@@ -3,6 +3,6 @@
 
 #include <stdint.h>
 
-int chiamaEncode(uint8_t* buffer, uint8_t* alphabet, size_t charsetLength, size_t stringLength, uint64_t counter);  
+void chiamaEncode(uint8_t* buffer, uint8_t* alphabet, size_t charsetLength, size_t stringLength, uint64_t counter);  
 
 #endif

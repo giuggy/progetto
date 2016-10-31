@@ -1,23 +1,18 @@
-__kernel void encode (__global uint8_t* buffer, __global const uint8_t* alphabet, __global const size_t charsetLength, __global const size_t stringLength, __global const uint64_t counter ) {
- 
+__kernel void encode_k (__global char* buffer, __global const char* alphabet, const long charsetLength, const long stringLength, long counter ) {
 
 	int i = get_global_id(0);
-	if (i = stringLength){
-		buffer[i]='\0';
-		return;
-	}
-	if(i> stringLength) return;
+	long c = counter;
 	
-
-	int a=0; 
-	int carry=0;
-	counter= (counter+i)/ charsetLength
-	a = carry + (counter % charsetLength);
-	carry = a / charsetLength;
-	a -= carry * charsetLength;
-	buffer[i] = alphabet[a];
-
-
+	if(i>= stringLength) return;
+	
+	int j;
+	for (j = 0; j < i; j++) c /= charsetLength;
+	
+    long a =  a / charsetLength + (c % charsetLength); // aggiorna cella j-esima    
+    a -= (a / charsetLength) * charsetLength; // ... ma anche per quello corrente!       
+    buffer[i] = alphabet[a]; // costruisce la stringa
+    
+    counter/= charsetLength;
 }
 
 //genera la permutazione counter-esima dati un alfabeto ed una base

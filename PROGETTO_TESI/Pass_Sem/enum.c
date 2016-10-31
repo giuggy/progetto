@@ -132,7 +132,6 @@ void* work(void* par){
 		#endif    
    
 		encode(alphabet, charsetLength, stringLength, count, buffer); // genera permutazione in buffer
-		
 
 		
 		

@@ -11,8 +11,8 @@
 #define FILE_BUF_LENGTH     256
 
 int main(int argc, char* argv[]) {
-  uint8_t* alphabet=(uint8_t*)"0123456789abcdefghijklmnopqrstuvwxyz";
-  
+  uint8_t* alphabet=(uint8_t*)"0123456789abcdefghijklmnopqrstuvwxyz\0";
+		
   if (argc != 2) {
     printf("Syntax: %s <input_file>\n", argv[0]);
     exit(EXIT_FAILURE);

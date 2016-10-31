@@ -3,17 +3,23 @@ CFLAGS = -O3 -Wall
 OFLAGS = -O2
 LFLAGS = -l OpenCL
 
-all: md5crack md5crack_verbose kernel encode
+all: md5crack kernel encode
 
 md5crack: md5.o enum.o main.o sort.o device.o
 	$(CC) $(CFLAGS) main.o md5.o enum.o sort.o device.o -o md5crack $(LFLAGS)
 
-kernel: sort.o main.o md5.o enum_v.o device.o
-	$(CC) $(CFLAGS)  device.o md5.o enum_v.o sort.o main.o -o kernel $(LFLAGS)
+kernel: sort.o main.o md5.o enum.o device.o
+	$(CC) $(CFLAGS)  device.o md5.o enum.o sort.o main.o -o kernel $(LFLAGS)
 
-encode: device.o main.o md5.o enum_v.o sort.o
-	$(CC) $(CFLAGS) sort.o md5.o enum_v.o device.o main.o -o encode $(LFLAGS)
+encode: device.o main.o md5.o enum.o sort.o
+	$(CC) $(CFLAGS) sort.o md5.o enum.o device.o main.o -o encode $(LFLAGS)
 	
+
+sort.o: sort.c sort.h
+	$(CC) $(CFLAGS) -c sort.c 
+
+device.o: device.c device.h
+	$(CC) $(CFLAGS) -c device.c
 
 enum.o: enum.c enum.h sort.h device.h
 	$(CC) $(CFLAGS) -c enum.c
@@ -24,11 +30,6 @@ md5.o: md5.c md5.h
 main.o: main.c md5.h enum.h sort.h
 	$(CC) $(CFLAGS) -c main.c
 	
-sort.o: sort.c sort.h
-	$(CC) $(CFLAGS) -c sort.c 
-
-device.o: device.c device.h
-	$(CC) $(CFLAGS) -c device.c
 
 		
 
